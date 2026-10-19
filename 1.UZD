@@ -1,9 +1,8 @@
-$os = Get-CimInstance -ClassName Win32_OperatingSystem
-$procesi = Get-Process
+Write-Output "Datora nosaukums: $env:COMPUTERNAME"; $os = Get-CimInstance -ClassName Win32_OperatingSystem; Write-Output "Operētājsistēma: $($os.Caption)"; Write-Output "Būvējuma numurs: $($os.BuildNumber)"; Write-Output "PowerShell versija: $($PSVersionTable.PSVersion)"; Write-Output "Datums un laiks: $(Get-Date)"; Write-Output "Procesu skaits: $((Get-Process).Count)"
 
-Write-Output "Datora nosaukums: $env:COMPUTERNAME"
-Write-Output "Operetajsistema: $($os.Caption)"
-Write-Output "Buvējuma numurs: $($os.BuildNumber)"
-Write-Output "PowerShell versija: $($PSVersionTable.PSVersion)"
-Write-Output "Datums un laiks: $(Get-Date)"
-Write-Output "Procesu skaits: $($procesi.Count)"
+Datora nosaukums: KR26K359D13
+Operētājsistēma: Microsoft Windows 11 Pro
+Būvējuma numurs: 26200
+PowerShell versija: 5.1.26100.9444
+Datums un laiks: 10/19/2026 14:20:05
+Procesu skaits: 172
