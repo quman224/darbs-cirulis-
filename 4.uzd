@@ -1,0 +1,3 @@
+$k = @(Get-WinEvent -FilterHashtable @{LogName='System'; Level=2; StartTime=(Get-Date).AddHours(-48)} -ErrorAction SilentlyContinue)
+"K kludu skaits: $($k.Count)"
+$k | Group-Object ProviderName | Sort-Object Count -Descending | Select-Object -First 1 Name, Count
