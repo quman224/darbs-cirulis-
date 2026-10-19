@@ -1,5 +1,14 @@
-$procesi = Get-Process
+Get-Process | Sort-Object -Property WorkingSet64 | Select-Object -Last 10 | Select-Object @{Name="Nosaukums";Expression={$_.ProcessName}},@{Name="ID";Expression={$_.Id}},@{Name="Atmina_MB";Expression={[math]::Round($_.WorkingSet64 / 1MB, 1)}} | Format-Table -AutoSize
 
-$rezultats = $procesi | Sort-Object -Property WorkingSet64 | Select-Object -Last 10 | Select-Object @{Name="Nosaukums"; Expression={$_.ProcessName}}, @{Name="ID"; Expression={$_.Id}}, @{Name="Atmina_MB"; Expression={[math]::Round($_.WorkingSet64 / 1MB, 1)}}
-
-$rezultats | Format-Table -AutoSize
+Nosaukums           ID Atmina_MB
+---------           -- ---------
+MsMpEng           3964     287.8
+chrome            9096     288.4
+chrome            4512     321.7
+chrome           10884     325.6
+chrome            8944     325.7
+RobloxPlayerBeta  8892     330.4
+chrome            9560     397.6
+explorer          3428     437.4
+chrome           10416       504
+chrome            2124     600.1
