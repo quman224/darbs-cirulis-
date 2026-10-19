@@ -1,0 +1,6 @@
+# Atskaites ID: RVT-4417
+$t1=Measure-Command {Get-Service -Name Spooler}; $t2=Measure-Command {Get-CimInstance Win32_Service -Filter "Name='Spooler'"}; Write-Output "Get-Service: $($t1.TotalMilliseconds) ms"; Write-Output "Get-CimInstance: $($t2.TotalMilliseconds) ms"
+
+Get-Service: 13.884 ms
+Get-CimInstance: 276.1089 ms
+atrakais bija get service 
