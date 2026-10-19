@@ -1,17 +1,3 @@
-$servisi = Get-Service
+$a=0; $b=0; foreach($s in (Get-Service)){if($s.Status -eq "Running"){$a++}elseif($s.Status -eq "Stopped"){$b++}}; Write-Output "Darbojas: $a; Aptureti: $b; Kopa: $($a+$b)"
 
-$darbojas = 0
-$aptureti = 0
-
-foreach ($serviss in $servisi) {
-    if ($serviss.Status -eq "Running") {
-        $darbojas++
-    }
-    elseif ($serviss.Status -eq "Stopped") {
-        $aptureti++
-    }
-}
-
-Write-Output "Darbojas: $darbojas"
-Write-Output "Aptureti: $aptureti"
-Write-Output "Kopa: $($darbojas + $aptureti)"
+Darbojas: 97; Aptureti: 176; Kopa: 273
