@@ -1,4 +1,4 @@
-# Atskaites ID: RVT-4417
+
 Get-Process | ForEach-Object { try { "$($_.ProcessName) - $((Get-CimInstance Win32_Process -Filter "ProcessId=$($_.Id)" -ErrorAction Stop).GetOwner().User)" } catch { "$($_.ProcessName) - Lietotāju nevar noteikt" } }
 
 Lietotāju nevar noteikt
